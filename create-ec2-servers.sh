@@ -4,6 +4,7 @@
 ZONE_ID="Z08448621CU0UQF90HZOH"
 DOMAIN="devops71m.online"
 SG_NAME="allow-all"
+
 #############################
 
 
