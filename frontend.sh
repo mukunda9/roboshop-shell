@@ -1,15 +1,15 @@
-echo -e "\e[34minstall nginx\e[m0"
+echo -e "\e[34minstall nginx\e[0m"
 yum install nginx -y
-echo -e "\e[34mremoving old content nginx\e[m0"
+echo -e "\e[35mremoving old content nginx\e[0m"
 rm -rf /usr/share/nginx/html/*
-echo -e "\e[34mdownloding nginx\e[m0"
+echo -e "\e[34mdownloding nginx\e[0m"
 curl -o /tmp/frontend.zip https://roboshop-artifacts.s3.amazonaws.com/frontend.zip
-echo -e "\e[34mextract nginx\e[m0"
+echo -e "\e[31mextract nginx\e[0m"
 cd /usr/share/nginx/html
 unzip /tmp/frontend.zip
-echo -e "\e[32mcopying nginx config for roboshop\e[m0"
+echo -e "\e[32mcopying nginx config for roboshop\e[0m"
 cp configs/nginx-roboshop.conf /etc/nginx/default.d/roboshop.conf
-echo -e "\e[33menble nginx\e[m0"
+echo -e "\e[33menble nginx\e[0m"
 systemctl enable nginx
-echo -e "\e[34mistating nginx\e[m0"
+echo -e "\e[34mistating nginx\e[om"
 systemctl restart nginx
