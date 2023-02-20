@@ -1,4 +1,5 @@
 source common.sh
+print_head "install nginx"
 echo -e "\e[34m install nginx\e[0m"
 yum install nginx -y
 echo -e "\e[35m removing old content nginx\e[0m"
