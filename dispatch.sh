@@ -28,3 +28,21 @@ unzip /tmp/dispatch.zip &>>${log_file}
 status_check $?
 
 
+print_head "Copy SystemD Service File"
+cp ${code_dir}/configs/dispatch.service /etc/systemd/system/dispatch.service &>>${log_file}
+status_check $?
+
+print_head "Reload SystemD"
+systemctl daemon-reload &>>${log_file}
+status_check $?
+
+print_head "Enable Catalogue Service "
+systemctl enable catalogue &>>${log_file}
+status_check $?
+
+print_head "Start Catalogue Service"
+systemctl restart catalogue &>>${log_file}
+status_check $?
+
+
+
