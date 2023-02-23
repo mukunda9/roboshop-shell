@@ -157,5 +157,7 @@ golang() {
   go get
   go build
 
+  systemd_setup
+
 
 }
