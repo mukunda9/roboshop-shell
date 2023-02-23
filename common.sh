@@ -145,3 +145,17 @@ python() {
   systemd_setup
 }
 
+golang() {
+  print_head "install golang"
+  yum install golang -y &>>${log_file}
+  status_check $?
+
+  app_prereq_setup
+
+  print_head "Download dependencies"
+  go mod init dispatch
+  go get
+  go build
+
+
+}
