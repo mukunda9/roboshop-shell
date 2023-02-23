@@ -153,9 +153,13 @@ golang() {
   app_prereq_setup
 
   print_head "Download dependencies"
-  go mod init dispatch
-  go get
-  go build
+  go mod init dispatch &>>${log_file}
+  go get &>>${log_file}
+  go build &>>${log_file}
+
+   status_check $?
+
+
 
   systemd_setup
 
