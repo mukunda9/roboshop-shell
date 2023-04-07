@@ -19,7 +19,7 @@ status_check $?
 
 print_head "Copying Nginx Config for RoboShop"
 
-cp ${code_dir}/configs/nginx-roboshop.conf /etc/nginx/default.d/roboshop.conf &>>${log_file}
+cp ${code_dir}/configs/nginx-roboshop.conf  /etc/nginx/default.d/roboshop.conf &>>${log_file}
 status_check $?
 
 print_head "Enabling nginx"
