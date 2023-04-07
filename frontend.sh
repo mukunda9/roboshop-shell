@@ -13,7 +13,7 @@ curl -o /tmp/frontend.zip https://roboshop-artifacts.s3.amazonaws.com/frontend.z
 status_check $?
 
 print_head "Extracting Downloaded Frontend"
-cd /usr/share/nginx/html
+cd  /usr/share/nginx/html
 unzip /tmp/frontend.zip &>>${log_file}
 status_check $?
 
