@@ -1,6 +1,6 @@
 
-ZONE_ID="Z08747613MFS3WNPFXV8R"
-DOMAIN="devops71a.online"
+ZONE_ID="Z09364911ADSPLNBPI61B"
+DOMAIN="devops71m.online"
 SG_NAME="allow-all"
 #############################
 
