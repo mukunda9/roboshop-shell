@@ -1,6 +1,8 @@
 source common.sh
 
 print_head "Installing nginx"
+
+# shellcheck disable=SC2154
 yum install nginx -y &>>${log_file}
 status_check $?
 
@@ -13,11 +15,13 @@ curl -o /tmp/frontend.zip https://roboshop-artifacts.s3.amazonaws.com/frontend.z
 status_check $?
 
 print_head "Extracting Downloaded Frontend"
+# shellcheck disable=SC2164
 cd /usr/share/nginx/html
 unzip /tmp/frontend.zip &>>${log_file}
 status_check $?
 
 print_head "Copying Nginx Config for RoboShop"
+# shellcheck disable=SC2154
 cp ${code_dir}/configs/nginx-roboshop.conf /etc/nginx/default.d/roboshop.conf &>>${log_file}
 status_check $?
 
